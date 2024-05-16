@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: user-service
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/userservice
+    username: postgres
+    password: 666
+
+  jackson:
+    date-format: 'dd.MM.yyyy'
+
+
+flyway:
+  enabled: true
+  placeholder-replacement: false
+  baseline-on-migrate: true
+  locations: classpath:db/migration
+
+
+logging:
+  file:
+    name: './logs/application.log'
+    logback:
+      rollingpolicy:
+        max-file-size: 1MB
+        total-size-cap: 10MB
+        max-history: 30
+        clean-history-on-start: true
+  pattern:
+    console: '%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint} %clr([%8.15t]){faint} %clr(%-40.40logger{0}){cyan} %clr(:){faint} %clr(%m){faint}%n'
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n'
+  level:
+    com.com.angel: debug
+    org.springframework: warn
+    org.hibernate: error
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
