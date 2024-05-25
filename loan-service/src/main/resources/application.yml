@@ -1,6 +1,10 @@
 spring:
   application:
     name: loan-service
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/loanservice
+    password: 666
 server:
   port: 8081
 
