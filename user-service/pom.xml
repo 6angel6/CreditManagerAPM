@@ -13,9 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>user-service</name>
     <description>user-service</description>
-
-
-
+    
     <dependencies>
         <dependency>
             <groupId>org.postgresql</groupId>

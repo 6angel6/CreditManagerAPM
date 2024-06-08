@@ -20,12 +20,9 @@ public class LoanEntity {
 	private Long id;
 
 	private Long userId;
-	private BigDecimal requstedAmount;
-	private String decisionStatus;
-	private int approvedTerm;
-	private BigDecimal approvedAmount;
-	private LocalDateTime signingDate;
-	private String signingStatus;
 
+	private BigDecimal requstedAmount;
+
+	private String signingStatus;
 
 }
