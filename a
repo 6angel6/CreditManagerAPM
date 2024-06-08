@@ -1,0 +1,43 @@
+[33mcommit 31fd0d36689e9f35c08f981e07366a1733c1ba8c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: r_angel <143842574+6angel6@users.noreply.github.com>
+Date:   Sat May 25 22:35:22 2024 +0500
+
+    -added Loan Model
+
+[1mdiff --git a/loan-service/src/main/java/com/angel/model/LoanEntity.java b/loan-service/src/main/java/com/angel/model/LoanEntity.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..dddd07a[m
+[1m--- /dev/null[m
+[1m+++ b/loan-service/src/main/java/com/angel/model/LoanEntity.java[m
+[36m@@ -0,0 +1,31 @@[m
+[32m+[m[32mpackage com.angel.model;[m
+[32m+[m
+[32m+[m[32mimport jakarta.persistence.Entity;[m
+[32m+[m[32mimport jakarta.persistence.GeneratedValue;[m
+[32m+[m[32mimport jakarta.persistence.GenerationType;[m
+[32m+[m[32mimport jakarta.persistence.Id;[m
+[32m+[m[32mimport lombok.Getter;[m
+[32m+[m[32mimport lombok.Setter;[m
+[32m+[m
+[32m+[m[32mimport java.math.BigDecimal;[m
+[32m+[m[32mimport java.time.LocalDateTime;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Getter[m
+[32m+[m[32m@Setter[m
+[32m+[m[32mpublic class LoanEntity {[m
+[32m+[m
+[32m+[m	[32m@Id[m
+[32m+[m	[32m@GeneratedValue(strategy = GenerationType.IDENTITY)[m
+[32m+[m	[32mprivate Long id;[m
+[32m+[m
+[32m+[m	[32mprivate Long userId;[m
+[32m+[m	[32mprivate BigDecimal requstedAmount;[m
+[32m+[m	[32mprivate String decisionStatus;[m
+[32m+[m	[32mprivate int approvedTerm;[m
+[32m+[m	[32mprivate BigDecimal approvedAmount;[m
+[32m+[m	[32mprivate LocalDateTime signingDate;[m
+[32m+[m	[32mprivate String signingStatus;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m}[m
