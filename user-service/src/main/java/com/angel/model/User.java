@@ -31,6 +31,9 @@ public class User implements BaseEntity<Long> {
 	@Column(name = "employment_info", nullable = false)
 	private String employmentInfo;
 
+	@Column(name = "requestedAmount")
+	private int requestedAmount;
+
 	@Column(name = "phone_number", nullable = false)
 	@Pattern(regexp="^\\+\\d{12}$",message="Invalid phone number format")
 	private String phoneNumber;

@@ -22,7 +22,6 @@ public class UserDaoImpl implements UserDao<Long, User> {
 	@Override
 	public void delete(User user) {
 		sessionFactory.getCurrentSession().remove(user);
-
 	}
 
 	@Override

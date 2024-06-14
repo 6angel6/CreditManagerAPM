@@ -1,12 +1,10 @@
 package com.angel.service;
 
 import com.angel.model.LoanEntity;
-import org.springframework.stereotype.Service;
 
-@Service
-public class LoanService {
+public interface LoanService {
 
-	public LoanEntity createLoan(LoanEntity loan) {
-		return null;
-	}
+	String getUsers(Long id);
+	LoanEntity applyForCredit(Long userId);
 }
+

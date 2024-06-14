@@ -23,15 +23,20 @@ import java.util.stream.Collectors;
 import static com.angel.common.Constants.*;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
-@Transactional
 public class UserServiceImpl implements UserService {
 
 	private final UserDaoImpl userDao;
 	private final UserRequestMapper userRequestMapper;
 	private final UserResponseMapper userResponseMapper;
 
+	public UserServiceImpl(UserDaoImpl userDao, UserRequestMapper userRequestMapper, UserResponseMapper userResponseMapper) {
+		this.userDao = userDao;
+		this.userRequestMapper = userRequestMapper;
+		this.userResponseMapper = userResponseMapper;
+	}
+
+	@Transactional(readOnly = true)
 	public UserResponse findById(Long id) {
 		return userDao.findById(id)
 				.map(userResponseMapper::toDto)
@@ -49,6 +54,7 @@ public class UserServiceImpl implements UserService {
 		return users;
 	}
 
+	@Transactional
 	public CommandResponse create(UserRequest userRequest) {
 		final User user = userRequestMapper.toEntity(userRequest);
 		userDao.create(user);

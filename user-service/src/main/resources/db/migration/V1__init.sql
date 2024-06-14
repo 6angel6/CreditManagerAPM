@@ -6,7 +6,8 @@ CREATE TABLE Person (
                         address VARCHAR(255) NOT NULL,
                         employment_info VARCHAR(255) NOT NULL,
                         phone_number VARCHAR(13) NOT NULL,
-                        credit_status VARCHAR(255) NOT NULL
+                        credit_status VARCHAR(255) NOT NULL,
+                        requestedAmount BIGINT
 );
 
 CREATE TABLE passport (
@@ -14,7 +15,6 @@ CREATE TABLE passport (
                           passport_number VARCHAR(20) NOT NULL,
                           user_id BIGINT UNIQUE REFERENCES Person(id) ON DELETE CASCADE
 );
-
 
 -- Добавляем столбцы для даты создания и даты обновления в таблице "Person"
 ALTER TABLE Person
